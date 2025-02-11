@@ -1,13 +1,109 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Delius+Swash+Caps&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* ROOTS */
+
+ :root {
+  --PALETTE-WHITE: #F4F1DE; 
+  --PALETTE-ORANGE: #E07A5F;
+  --PALETTE-PURPLE: #3D405B;
+  --PALETTE-TURQUOISE: #81B29A;
+  --PALETTE-YELLOW: #F2CC8F;
+  --TEXT-BLACK: #252422; 
+
+  --MAIN-FONT-FAMILY: "Delius Swash Caps", serif; 
+ }
+
+ #root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* GLOBAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--PALETTE-WHITE);
+  font-family: var(--MAIN-FONT-FAMILY);
+  font-size: 16px;
+  color: var(--TEXT-BLACK);
+}
+
+.App {
+  width: 100%;
+  max-width: 850px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 5px solid var(--TEXT-BLACK);
+  box-shadow: 0px 0px 15px gray;
+
+}
+
+.Header, .Footer{
+  width: 100%;
+  height: 15vh;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  gap: 0.5;
+
+  background-color: var(--PALETTE-ORANGE);
+  border-bottom: 5px solid var(--TEXT-BLACK);
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: bolder;
+
+  
+  padding: 1rem;
+
+  border-right: 5px dashed var(--TEXT-BLACK);
+  border-left: 5px dashed var(--TEXT-BLACK);
+  background-color: var(--PALETTE-TURQUOISE);
+}
+
+/* COMPONENTS */
+
+.Home {
+  width: 100%;
+  height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  background-color: var(--PALETTE-WHITE);
+}
+
+/* Will need to mess with relative  nature of header and body/main elements  */
+
+.Icon {
+  width: 50px;
+  height: 50px;
+
+  transition: 0.3s;
+}
+
+.Icon:hover {
+  scale: 120%;
+}
+

@@ -6,3 +6,5 @@ const PracticeCards = () => {
     )
 
 }
+
+export default PracticeCards

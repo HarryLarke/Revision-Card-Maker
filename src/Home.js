@@ -2,7 +2,13 @@
 const Home = () => {
 
     return (
-        console.log("We're home")
+        <main
+        className="Home">
+            
+            <p>
+                Home is where the  heart is.
+                </p>
+            </main>
     )
 }
 

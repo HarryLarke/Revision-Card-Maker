@@ -14,20 +14,22 @@ function App() {
 
     <Routes>
 
-      <Route path='/' element={Layout}>
+      <Route path='/' element={<Layout/>}>
 
         <Route index element={<Home/>}/>
-
+    
         <Route path='/create'>
           <Route index element={<CreateCards/>}/>
-          <Route path='/view/:id' element={<ViewCards/>}/>
+          <Route path='/create/:id' element={<ViewCards/>}/>
         </Route>
 
-        <Route path='/practice'>
-          <Route path=':id' element={<PracticeCards/>}/>
+        <Route path='/practice/:id'>
+          <Route index element={<PracticeCards/>}/>
         </Route>
 
-        <Route path='edit/id' element={<EditCards/>}/>
+        <Route path='/edit/:id'>
+          <Route index element={<EditCards/>}></Route>
+        </Route>
 
       </Route>
       

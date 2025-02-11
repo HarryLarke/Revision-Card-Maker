@@ -1,7 +1,19 @@
+import { Outlet } from "react-router-dom"
+
+import Header from "./Header"
+import Footer from "./Footer"
 
 const Layout = () => {
 
     return (
-        console.log('This is the layout')
+        <div
+        className="App">
+            <Header
+            title='Revision Card Maker!'/>
+            <Outlet/>
+            <Footer/>
+        </div>
     )
+
 }
+export default Layout

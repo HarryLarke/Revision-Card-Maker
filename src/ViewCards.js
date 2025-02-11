@@ -6,3 +6,5 @@ const ViewCards = () => {
     )
 
 }
+
+export default ViewCards
