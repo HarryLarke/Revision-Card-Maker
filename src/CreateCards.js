@@ -2,7 +2,10 @@
 const CreateCards = () => {
 
     return (
-        console.log("Let's make some revision cards!")
+        <main
+        className="Home">
+            <h2>Let's make some revision cards!</h2>
+        </main>
     )
 
 } 

@@ -1,0 +1,21 @@
+{
+    "bundles": [
+        {
+            "id": "1",
+            "title": "Modern Russian History", 
+            "description": "Questions covering key dates, topics and issues of pre, post and communist Russia."
+        },
+
+        {
+            "id": "2",
+            "title": "Post-Modern Architectural Design", 
+            "description": "Questions covering key dates, architects and styles of Post Modern style."
+        },
+
+        {
+            "id": "3",
+            "title": "Post-War Expressionism", 
+            "description": "Evalutaing European expressionism post WW2 in art, poetry and music."
+        }
+    ]
+}
