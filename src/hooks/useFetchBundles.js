@@ -1,8 +1,6 @@
 import axios from "axios"
+
 import { useState, useEffect } from "react"
-
-
-
 
 const useFetchBundles = (dataUrl) => {
     const [ data, setData ] = useState([])
@@ -10,6 +8,7 @@ const useFetchBundles = (dataUrl) => {
     const [ isLoading, setIsLoading ] = useState(false)
 
     useEffect(() => {
+        console.log(`Fetching from ${dataUrl}`)
         let isMounted = true 
         const source = axios.CancelToken.source() 
 
@@ -21,7 +20,6 @@ const useFetchBundles = (dataUrl) => {
                 
                 if (isMounted) {
                     setData(response.data)
-                    console.log(data)
                     setFetchError(null)
                 }} 
                 catch(err) {

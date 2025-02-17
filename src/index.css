@@ -80,22 +80,75 @@ h1 {
   background-color: var(--PALETTE-TURQUOISE);
 }
 
+a {
+  color: var(--TEXT-BLACK);
+  text-decoration: none;
+}
+
+
 /* COMPONENTS */
 
 .Home {
   width: 100%;
   height: 80vh;
+  flex-grow: 1;
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 
   padding: 1rem;
+  gap: 1.5rem;
   background-color: var(--PALETTE-WHITE);
+
+  overflow-y: auto;
 }
 
+
+
+.Bundle {
+  height: 300px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 1rem;
+  gap: 0.5rem;
+  background-color: var(--BLANK-WHITE);
+  border: solid 3px var(--TEXT-BLACK);
+  border-radius: 5px;
+
+  transition: 0.3s;
+}
+
+.Bundle-Title {
+  border-bottom: solid 2px var(--TEXT-BLACK);
+  background-color: var(--PALETTE-YELLOW);
+  font-weight: bolder;
+}
+
+
+.Bundle-Desciption-Title {
+  justify-content: start;
+  align-items: center;
+  padding-top: 0.5rem;
+  text-decoration: underline;
+}
+
+
+
 /* Will need to mess with relative  nature of header and body/main elements  */
+
+/* VARIABLES */
+
+.Error {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: red;
+} 
 
 .Icon {
   width: 50px;
@@ -105,6 +158,12 @@ h1 {
 }
 
 .Icon:hover {
-  scale: 120%;
+  scale: 110%;
 }
 
+
+/* ANIMATIONS ETC */
+
+.Bundle:hover {
+  scale: 110%
+}

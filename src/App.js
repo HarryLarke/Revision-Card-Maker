@@ -25,6 +25,10 @@ function App() {
             <Route path='/create/:id' element={<ViewCards/>}/>
           </Route>
 
+          <Route path='/view/:id'>
+            <Route index element={<ViewCards/>}/>
+          </Route>
+
           <Route path='/practice/:id'>
             <Route index element={<PracticeCards/>}/>
           </Route>
