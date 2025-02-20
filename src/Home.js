@@ -7,7 +7,6 @@ const Home = () => {
 
     const { bundles, fetchError, isLoading} = useContext(DataContext)
 
-
     return (
         <main
         className="Home">

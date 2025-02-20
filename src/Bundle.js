@@ -6,7 +6,7 @@ const Bundle = ({bundle}) => {
 
         <Link
         className="Bundle"
-        to={`/view/:${bundle.id}`}>
+        to={`/view/${bundle.id}`}>
         <h3
         className="Bundle-Title"
         >{bundle.title}</h3>

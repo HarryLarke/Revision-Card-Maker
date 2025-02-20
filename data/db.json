@@ -4,97 +4,172 @@
             "id": 1,
             "title": "Modern Russian History", 
             "description": "Questions covering key dates, topics and issues of pre, post and communist Russia.",
-            "Questions": {
-                 "1": "What is the capital of the UK?",
-                 "2": "Why is Minecraft so great?",
-                 "3": "If you could be any animal, what animal would you be?",
-                 "4": "What is my favourite genre of music?",
-                 "5": "What's the real reason why people don't like Jazz?",
-                 "6": "What is the top Brexit Gezza?",
-                 "7": "What is IRN BRU?"
-            }, 
-            "Answers" : {
-                "1": "London",
-                "2": "Combination of freedom, simplicity and creativity in the game.",
-                "3": "Eagle",
-                "4": "Jazz",
-                "5": "They fear it's lack of boundaries and structure.",
-                "6": "Dave",
-                "7": "The best beverage to ever exist!"
-            }
+            "questions": [
+                {
+                "id" : 1,
+                "question": "What is the capital of the UK?",
+                "answer": "London"
+                },
+                {
+                "id" : 2,
+                "question": "Why is Minecraft so great?",
+                "answer": "Combination of freedom, simplicity and creativity in the game."
+                },
+                {
+                "id" : 3,
+                "question": "If you could be any animal, what animal would you be?",
+                "answer": "Eagle"
+                },
+                {
+                "id" : 4,
+                "question": "What is my favourite genre of music?",
+                "answer": "Jazz"
+                },
+                {
+                "id" : 5,
+                "question": "What's the real reason why people don't like Jazz?",
+                "answer": "They fear it's lack of boundaries and structure."
+                },
+                {
+                "id" : 6,
+                "question": "What is the top Brexit Gezza?",
+                "answer": "Dave"
+                },
+                {
+                "id" : 7,
+                "question": "What is IRN BRU?",
+                "answer": "The best beverage to ever exist!"
+                }
+            ]
         },
 
         {
             "id": 2,
             "title": "Post-Modern Architectural Design", 
             "description": "Questions covering key dates, architects and styles of Post Modern style.",
-            "Questions": {
-                 "1": "What is the capital of the UK?",
-                 "2": "Why is Minecraft so great?",
-                 "3": "If you could be any animal, what animal would you be?",
-                 "4": "What is my favourite genre of music?",
-                 "5": "What's the real reason why people don't like Jazz?",
-                 "6": "What is the top Brexit Gezza?",
-                 "7": "What is IRN BRU?"
-            }, 
-            "Answers" : {
-                "1": "London",
-                "2": "Combination of freedom, simplicity and creativity in the game.",
-                "3": "Eagle",
-                "4": "Jazz",
-                "5": "They fear it's lack of boundaries and structure.",
-                "6": "Dave",
-                "7": "The best beverage to ever exist!"
-            }
-            
+            "questions": [
+                 {
+                "id" : 1,
+                "question": "What is the capital of the UK?",
+                "answer": "London"
+                },
+                {
+                "id" : 2,
+                "question": "Why is Minecraft so great?",
+                "answer": "Combination of freedom, simplicity and creativity in the game."
+                },
+                {
+                "id" : 3,
+                "question": "If you could be any animal, what animal would you be?",
+                "answer": "Eagle"
+                },
+                {
+                "id" : 4,
+                "question": "What is my favourite genre of music?",
+                "answer": "Jazz"
+                },
+                {
+                "id" : 5,
+                "question": "What's the real reason why people don't like Jazz?",
+                "answer": "They fear it's lack of boundaries and structure."
+                },
+                {
+                "id" : 6,
+                "question": "What is the top Brexit Gezza?",
+                "answer": "Dave"
+                },
+                {
+                "id" : 7,
+                "question": "What is IRN BRU?",
+                "answer": "The best beverage to ever exist!"
+                } 
+            ]            
         },
 
         {
             "id": 3,
             "title": "Post-War Expressionism", 
             "description": "Evalutaing European expressionism post WW2 in art, poetry and music.",
-            "Questions": {
-                 "1": "What is the capital of the UK?",
-                 "2": "Why is Minecraft so great?",
-                 "3": "If you could be any animal, what animal would you be?",
-                 "4": "What is my favourite genre of music?",
-                 "5": "What's the real reason why people don't like Jazz?",
-                 "6": "What is the top Brexit Gezza?",
-                 "7": "What is IRN BRU?"
-            }, 
-            "Answers" : {
-                "1": "London",
-                "2": "Combination of freedom, simplicity and creativity in the game.",
-                "3": "Eagle",
-                "4": "Jazz",
-                "5": "They fear it's lack of boundaries and structure.",
-                "6": "Dave",
-                "7": "The best beverage to ever exist!"
-            }
+            "questions": [
+                {
+                    "id" : 1,
+                    "question": "What is the capital of the UK?",
+                    "answer": "London"
+                    },
+                    {
+                    "id" : 2,
+                    "question": "Why is Minecraft so great?",
+                    "answer": "Combination of freedom, simplicity and creativity in the game."
+                    },
+                    {
+                    "id" : 3,
+                    "question": "If you could be any animal, what animal would you be?",
+                    "answer": "Eagle"
+                    },
+                    {
+                    "id" : 4,
+                    "question": "What is my favourite genre of music?",
+                    "answer": "Jazz"
+                    },
+                    {
+                    "id" : 5,
+                    "question": "What's the real reason why people don't like Jazz?",
+                    "answer": "They fear it's lack of boundaries and structure."
+                    },
+                    {
+                    "id" : 6,
+                    "question": "What is the top Brexit Gezza?",
+                    "answer": "Dave"
+                    },
+                    {
+                    "id" : 7,
+                    "question": "What is IRN BRU?",
+                    "answer": "The best beverage to ever exist!"
+                    }
+            ]
         },
 
         {
             "id": 4,
             "title": "Post-Modernity and Minecraft", 
             "description": "Revision concerning factual dates and information of the Minecraft series on Post-Modernity.",
-            "Questions": {
-                 "1": "What is the capital of the UK?",
-                 "2": "Why is Minecraft so great?",
-                 "3": "If you could be any animal, what animal would you be?",
-                 "4": "What is my favourite genre of music?",
-                 "5": "What's the real reason why people don't like Jazz?",
-                 "6": "What is the top Brexit Gezza?",
-                 "7": "What is IRN BRU?"
-            }, 
-            "Answers" : {
-                "1": "London",
-                "2": "Combination of freedom, simplicity and creativity in the game.",
-                "3": "Eagle",
-                "4": "Jazz",
-                "5": "They fear it's lack of boundaries and structure.",
-                "6": "Dave",
-                "7": "The best beverage to ever exist!"
-            }
+            "questions": [
+                {
+                    "id" : 1,
+                    "question": "What is the capital of the UK?",
+                    "answer": "London"
+                    },
+                    {
+                    "id" : 2,
+                    "question": "Why is Minecraft so great?",
+                    "answer": "Combination of freedom, simplicity and creativity in the game."
+                    },
+                    {
+                    "id" : 3,
+                    "question": "If you could be any animal, what animal would you be?",
+                    "answer": "Eagle"
+                    },
+                    {
+                    "id" : 4,
+                    "question": "What is my favourite genre of music?",
+                    "answer": "Jazz"
+                    },
+                    {
+                    "id" : 5,
+                    "question": "What's the real reason why people don't like Jazz?",
+                    "answer": "They fear it's lack of boundaries and structure."
+                    },
+                    {
+                    "id" : 6,
+                    "question": "What is the top Brexit Gezza?",
+                    "answer": "Dave"
+                    },
+                    {
+                    "id" : 7,
+                    "question": "What is IRN BRU?",
+                    "answer": "The best beverage to ever exist!"
+                    }
+            ]
         }
 
     ]

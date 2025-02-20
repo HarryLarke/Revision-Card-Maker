@@ -1,8 +1,11 @@
 
 const PracticeCards = () => {
-
+    console.log("practicing each individual revision card!")
     return (
-        console.log("practicing each individual revision card!")
+       <main
+       className="Home">
+        Hello there!
+       </main>
     )
 
 }
