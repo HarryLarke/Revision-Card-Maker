@@ -50,8 +50,6 @@ html {
   justify-content: flex-start;
   align-items: center;
   border: 5px solid var(--TEXT-BLACK);
-
-
 }
 
 .Header, .Footer{
@@ -117,6 +115,17 @@ a {
 
 }
 
+.Button-Holder {
+  width: 400px;
+  height: 200px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .View-Header {
   width: 100%;
   height: 7.5vh;
@@ -131,6 +140,8 @@ a {
   color: var(--TEXT-BLACK);
 
 }
+
+/* weird space under the header, plus need to stick it */
 
 .Bundle {
   height: 300px;
@@ -166,13 +177,29 @@ a {
 .Card {
   height: 250px;
   width: 180px;
+  gap: 1rem;
+}
+
+.Card-Title {
+  width: 90%;
+  border-bottom: solid 2px var(--TEXT-BLACK);
+  background-color: var(--PALETTE-ORANGE);
+  font-weight: bolder;
+}
+
+.Question {
+  border-bottom: solid 3px var(--TEXT-BLACK);
+  border-top: solid 3px var(--TEXT-BLACK);
+  padding: 0.5rem;
+}
+
+.Answer {
+  color: var(--PALETTE-ORANGE);
+  font-size: max(0.8rem, 1rem)
 }
 
 .Button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  display: grid;
   padding: 0.75rem;
 
   background-color: var(--PALETTE-WHITE);
@@ -184,6 +211,53 @@ a {
   font-size: 1.2rem;
 
   transition: 0.2s;
+  cursor: pointer;
+} /* Maybe keep the size  of the buttons static */
+
+.Practice-Home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Practice-Card {
+  height: 450px;
+  width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 1.5rem;
+  gap: 2rem;
+  background-color: var(--BLANK-WHITE);
+  border: solid 5px var(--TEXT-BLACK);
+  border-radius: 10px;
+}
+
+.Practice-Title {
+  font-size: 2rem;
+  font-weight: bolder;
+  border-bottom: 5px dashed var(--TEXT-BLACK);
+  padding: 0.2rem;
+  background-color: var(--PALETTE-YELLOW);
+}
+
+.Practice-Question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+  border-bottom: solid 5px var(--TEXT-BLACK);
+}
+
+.Practice-Answer {
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  background-color: var(--PALETTE-TURQUOISE);
+
 }
 
 

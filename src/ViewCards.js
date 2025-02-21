@@ -1,15 +1,16 @@
 import { useParams, useNavigate, Link} from "react-router-dom"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import DataContext from "./context/DataContext"
 
 import Button from "./buttons/Button"
+import ButtonShowAns from "./buttons/ButtonShowAns"
 import CardFeed from "./CardFeed"
 
 
 const ViewCards = () => {
     const {id} = useParams()
     const { bundles } = useContext(DataContext)
-
+    
     const bundle = bundles.find(bundle => (bundle.id).toString() === id)
 
     
@@ -22,12 +23,11 @@ const ViewCards = () => {
             >
                 <h2>{bundle.title}</h2>
                 <Button
-                title = {'Pratice'}
-                route = {`/practice/:${id}`}
+                title = {'Practice'}
+                route = {`/practice/${id}`}
                 />
-                <Button
-                title = {'View Answers'}
-                route = {'/'}/>
+                <ButtonShowAns
+                title={'Answers'}/>
             </header>
 
 
