@@ -10,14 +10,15 @@ import ButtonShowAns from "./buttons/ButtonShowAns"
 const PracticeCards = () => {
     const { id } = useParams()
     const { bundles } = useContext(DataContext)
-    const { setShowAnswers } = useContext(DataContext)
+    let { count } = useContext(DataContext)
+
 
     const bundle = bundles.find(bundle => (bundle.id).toString() === id)
 
     return (
 
        <main
-       className="Home  Practice-Home">
+       className="Practice">
         
             <PracticeCardFeed
             questions = {bundle.questions}

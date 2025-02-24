@@ -4,6 +4,7 @@ import DataContext from "../context/DataContext"
 const ButtonShowAns = ({title}) => {
 
 const { setShowAnswers, showAnswers }  = useContext(DataContext)
+let { count, questionNumber } = useContext(DataContext)
 
 const handleTitle = (showAnswers) => {
     if(showAnswers === true) { 

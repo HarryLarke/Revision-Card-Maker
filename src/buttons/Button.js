@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { use, useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 import DataContext from "../context/DataContext"
@@ -7,11 +7,14 @@ import DataContext from "../context/DataContext"
 const Button = ({route, title}) => {
     
     const { setShowAnswers } = useContext(DataContext)
+    let { setCount } = useContext(DataContext)
 
     return(
         <Link
         className="Button"
-        onClick={() => setShowAnswers(false)}
+        onClick={() => {setShowAnswers(false)
+            setCount(1)
+        }}
         to={route}>{title}
         </Link>
     )

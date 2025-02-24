@@ -8,8 +8,12 @@ const ButtonPrev = () => {
     return (
         <div
         className="Button"
-        onClick={() => {setCount(count += 1)
-            setShowAnswers(false)}}
+        onClick={() => {
+            if(count > 1) {
+            setCount(count -= 1)
+            setShowAnswers(false)}
+            
+        }}
         >Prev</div>
     )
 }
