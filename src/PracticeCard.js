@@ -6,8 +6,6 @@ const PracticeCard = ({number, question, answer}) => {
     let { count, setCount } = useContext(DataContext)
     const { showAnswers } = useContext(DataContext)
 
-    if (count === 0) {setCount(1)}
-
     return (
         <div
         className="Practice-Card">

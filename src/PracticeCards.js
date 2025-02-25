@@ -10,7 +10,7 @@ import ButtonShowAns from "./buttons/ButtonShowAns"
 const PracticeCards = () => {
     const { id } = useParams()
     const { bundles } = useContext(DataContext)
-    let { count } = useContext(DataContext)
+    let { count, questionLength } = useContext(DataContext)
 
 
     const bundle = bundles.find(bundle => (bundle.id).toString() === id)
@@ -24,13 +24,15 @@ const PracticeCards = () => {
             questions = {bundle.questions}
             />
 
+            {count <= questionLength &&
             <section
             className="Button-Holder">
                 <ButtonPrev/>
                 <ButtonShowAns
-                title={'Answers'}/>
+                title={'Answer'}/>
                 <ButtonNext/>
-            </section>
+    
+            </section>}
 
        </main>
     )

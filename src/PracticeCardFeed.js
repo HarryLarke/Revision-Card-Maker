@@ -2,10 +2,11 @@ import { useContext } from "react"
 import DataContext from "./context/DataContext"
 
 import PracticeCard from "./PracticeCard"
+import FinishCard from "./FinishCard"
 
 const PracticeCardFeed = ({questions}) => {
 
-    let { count, setCount, questionLength, setQuestionLength } = useContext(DataContext)
+    let { count, questionLength, setQuestionLength } = useContext(DataContext)
 
     
     setQuestionLength(questions.length) //Maybe do this elsewhere??
@@ -14,16 +15,15 @@ const PracticeCardFeed = ({questions}) => {
 /*     if (count === questionLength + 1) {console.log('Finished!')}  */
 
     return( 
-        <>  {count <= questionLength && <PracticeCard
+        <>  
+            {count <= questionLength && <PracticeCard
             key = {question.id}
             number = {question.id}
             question={question.question}
             answer={question.answer}
             ></PracticeCard>}
 
-            {count > questionLength && <div><h2>Finished!</h2></div>}
-
-
+            {count > questionLength && <FinishCard/>}
         </>
     
     )

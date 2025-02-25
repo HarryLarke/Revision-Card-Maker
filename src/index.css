@@ -115,22 +115,6 @@ a {
 
 }
 
-.Button-Holder {
-  width: 400px;
-  height: 80px;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-
-  border: solid 5px var(--TEXT-BLACK);
-  border-radius: 30px;
-
-
-}
-
 .View-Header {
   width: 100%;
   height: 7.5vh;
@@ -165,19 +149,6 @@ a {
   transition: 0.3s;
 }
 
-.Bundle-Title {
-  border-bottom: solid 2px var(--TEXT-BLACK);
-  background-color: var(--PALETTE-YELLOW);
-  font-weight: bolder;
-}
-
-
-.Bundle-Desciption-Title {
-  justify-content: start;
-  align-items: center;
-  padding-top: 0.5rem;
-  text-decoration: underline;
-}
 
 .Card {
   height: 250px;
@@ -185,12 +156,6 @@ a {
   gap: 1rem;
 }
 
-.Card-Title {
-  width: 90%;
-  border-bottom: solid 2px var(--TEXT-BLACK);
-  background-color: var(--PALETTE-ORANGE);
-  font-weight: bolder;
-}
 
 .Question {
   border-bottom: solid 3px var(--TEXT-BLACK);
@@ -200,7 +165,9 @@ a {
 
 .Answer {
   color: var(--PALETTE-ORANGE);
-  font-size: max(0.8rem, 1rem)
+  font-size: max(0.8rem, 1rem);
+
+  animation: fadeIn 0.5s ease-out;
 }
 
 .Button {
@@ -252,13 +219,7 @@ a {
   animation: flipCard-Right 0.8s ease-in;
 }
 
-.Practice-Title {
-  font-size: 2rem;
-  font-weight: bolder;
-  border-bottom: 5px dashed var(--TEXT-BLACK);
-  padding: 0.2rem;
-  background-color: var(--PALETTE-YELLOW);
-}
+
 
 .Practice-Question {
   font-size: 1.5rem;
@@ -276,6 +237,68 @@ a {
   animation: fadeIn 0.7s ease-out;
 
 }
+
+/* TITLES */
+
+.Practice-Title {
+  font-size: 2rem;
+  font-weight: bolder;
+  border-bottom: 5px dashed var(--TEXT-BLACK);
+  padding: 0.2rem;
+  background-color: var(--PALETTE-YELLOW);
+}
+
+.Bundle-Title {
+  border-bottom: solid 2px var(--TEXT-BLACK);
+  background-color: var(--PALETTE-YELLOW);
+  font-weight: bolder;
+}
+
+.Bundle-Desciption-Title {
+  justify-content: start;
+  align-items: center;
+  padding-top: 0.5rem;
+  text-decoration: underline;
+}
+
+.Card-Title {
+  width: 90%;
+  border-bottom: solid 2px var(--TEXT-BLACK);
+  background-color: var(--PALETTE-ORANGE);
+  font-weight: bolder;
+}
+
+
+/* HOLDERS */
+
+.Button-Holder {
+  width: 400px;
+  height: 80px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border: solid 5px var(--TEXT-BLACK);
+  border-radius: 30px;
+}
+
+.Button-Holder-Finished {
+  width: 100%;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+  
+  border-top: solid 5px var(--TEXT-BLACK);
+}
+
 
 
 

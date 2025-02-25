@@ -1,19 +1,27 @@
 import { Link } from "react-router-dom"
+import { useContext } from "react"
+import DataContext from "./context/DataContext"
 
 const Bundle = ({bundle}) => {
-    
+
+    const { setShowAnswers } = useContext(DataContext)
+
+    const QNum = bundle.questions.length
+
     return (
 
         <Link
         className="Bundle"
-        to={`/view/${bundle.id}`}>
+        to={`/view/${bundle.id}`}
+        onClick={() => setShowAnswers(false)}
+        >
         <h3
         className="Bundle-Title"
         >{bundle.title}</h3>
         <p
         className="Bundle-Desciption-Title">Description:</p>
         <p>{bundle.description}</p>
-        <p>12 Cards</p>
+        <p>{`${QNum} Cards`}</p>
         </Link>
     )
 }
