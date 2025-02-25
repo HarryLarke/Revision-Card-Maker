@@ -1,9 +1,8 @@
 import { useContext } from "react"
-import DataContext from "./context/DataContext"
+import DataContext from "../context/DataContext"
 
 const PracticeCard = ({number, question, answer}) => {
 
-    let { count, setCount } = useContext(DataContext)
     const { showAnswers } = useContext(DataContext)
 
     return (

@@ -28,7 +28,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  animation: fadeIn 0.5s ease-in-out
 }
+/* This animation is a little naughty */
 
 html {
   height: 100%;

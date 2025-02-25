@@ -1,10 +1,10 @@
 import { useParams, useNavigate, Link} from "react-router-dom"
 import { useContext, useState } from "react"
-import DataContext from "./context/DataContext"
+import DataContext from "../context/DataContext"
 
-import Button from "./buttons/Button"
-import ButtonShowAns from "./buttons/ButtonShowAns"
-import CardFeed from "./CardFeed"
+import Button from "../buttons/Button"
+import ButtonShowAns from "../buttons/ButtonShowAns"
+import CardFeed from "../feeders/CardFeed"
 
 
 const ViewCards = () => {

@@ -1,11 +1,11 @@
 import { useParams, useNavigate, Link} from "react-router-dom"
 import { useContext, useState } from "react"
 
-import DataContext from "./context/DataContext"
-import PracticeCardFeed from "./PracticeCardFeed"
-import ButtonPrev from "./buttons/ButtonPrev"
-import ButtonNext from "./buttons/ButtonNext"
-import ButtonShowAns from "./buttons/ButtonShowAns"
+import DataContext from "../context/DataContext"
+import PracticeCardFeed from "../feeders/PracticeCardFeed"
+import ButtonPrev from "../buttons/ButtonPrev"
+import ButtonNext from "../buttons/ButtonNext"
+import ButtonShowAns from "../buttons/ButtonShowAns"
 
 const PracticeCards = () => {
     const { id } = useParams()

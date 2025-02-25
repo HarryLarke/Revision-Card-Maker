@@ -1,8 +1,8 @@
 import { useContext } from "react"
-import DataContext from "./context/DataContext"
+import DataContext from "../context/DataContext"
 
-import PracticeCard from "./PracticeCard"
-import FinishCard from "./FinishCard"
+import PracticeCard from "../components/PracticeCard"
+import FinishCard from "../components/FinishCard"
 
 const PracticeCardFeed = ({questions}) => {
 

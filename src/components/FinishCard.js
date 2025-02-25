@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 
-import ButtonPrev from "./buttons/ButtonPrev"
-import Button from "./buttons/Button"
+import ButtonPrev from "../buttons/ButtonPrev"
+import Button from "../buttons/Button"
 
 const FinishCard = () => {
     const {id} = useParams()

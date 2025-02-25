@@ -1,5 +1,5 @@
-import HomeButton from "./buttons/HomeButton"
-import AddButton from "./buttons/AddButton"
+import HomeButton from "../buttons/HomeButton"
+import AddButton from "../buttons/AddButton"
 
 const Header = ({title}) => {
 

@@ -1,7 +1,7 @@
-import Feed from "./Feed"
+import Feed from "../feeders/Feed"
 
 import { useContext } from "react"
-import DataContext from "./context/DataContext"
+import DataContext from "../context/DataContext"
 
 const Home = () => {
 

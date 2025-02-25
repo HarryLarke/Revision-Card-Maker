@@ -1,12 +1,11 @@
 import { Routes, Route }  from 'react-router-dom'
 import { DataProvider } from './context/DataContext';
 
-import Home from './Home';
-import ViewBundles from './ViewBundles'
-import PracticeCards from './PracticeCards'
-import CreateCards from './CreateCards'
-import ViewCards from './ViewCards'
-import EditCards from './EditCards';
+import Home from './pages/Home';
+import PracticeCards from './pages/PracticeCards'
+import CreateCards from './pages/CreateCards'
+import ViewCards from './pages/ViewCards'
+import EditCards from './pages/EditCards';
 import Layout from './Layout'
 
 function App() {

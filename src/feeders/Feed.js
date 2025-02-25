@@ -1,4 +1,4 @@
-import Bundle from "./Bundle"
+import Bundle from "../components/Bundle"
 
 
 const Feed = ({bundles}) => {
