@@ -1,5 +1,5 @@
 
-const CreateCards = () => {
+const Create = () => {
 
     return (
         <main

@@ -85,6 +85,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: var(--MAIN-FONT-FAMILY);
+}
+
 
 /* COMPONENTS */
 
@@ -104,6 +108,22 @@ a {
   background-color: var(--PALETTE-WHITE);
 
   overflow-y: auto;
+}
+
+.Create {
+  width: 100%;
+  height: 80vh;
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 1rem;
+  gap: 1.5rem;
+  background-color: var(--PALETTE-WHITE);
 }
 
 .View {
@@ -152,11 +172,38 @@ a {
   transition: 0.3s;
 }
 
+.Bundle-Create {
+  height: 400px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 1rem;
+  gap: 1.5rem;
+  background-color: var(--BLANK-WHITE);
+  border: solid 3px var(--TEXT-BLACK);
+  border-radius: 15px;
+
+}
+
 
 .Card {
   height: 250px;
   width: 180px;
   gap: 1rem;
+}
+
+.Card-Make {
+  height: 250px;
+  width: 180px;
+  gap: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -188,6 +235,12 @@ a {
   transition: 0.2s;
   cursor: pointer;
 } /* Maybe keep the size  of the buttons static */
+
+.Button-Create {
+  background-color: var(--PALETTE-TURQUOISE);
+  border: solid 3px var(--TEXT-BLACK);
+  border-radius: 20px;
+}
 
 .Practice {
   width: 100%;
@@ -222,8 +275,6 @@ a {
   animation: flipCard-Right 0.8s ease-in;
 }
 
-
-
 .Practice-Question {
   font-size: 1.5rem;
   font-weight: bold;
@@ -238,8 +289,27 @@ a {
   background-color: var(--PALETTE-TURQUOISE);
 
   animation: fadeIn 0.7s ease-out;
-
 }
+
+.Input-Bundle {
+  width: 500px;
+
+  font-size: 1.5rem;
+  font-family: "Delius Swash Caps", serif;
+  padding: 0.5rem;
+  border: 3px solid var(--TEXT-BLACK);
+  border-radius: 10px;
+  background-color: var(--PALETTE-WHITE);
+}
+.Input-BundleTitle:focus-visible {
+  border: 3px solid var(--TEXT-BLACK);
+}
+
+.Input-BundleDescription {
+  font-size: 1rem;
+  height: 80px;
+}
+
 
 /* TITLES */
 
@@ -303,8 +373,6 @@ a {
 }
 
 
-
-
 /* Will need to mess with relative  nature of header and body/main elements  */
 
 /* VARIABLES */
@@ -317,8 +385,12 @@ a {
 .Icon {
   width: 50px;
   height: 50px;
-
   transition: 0.3s;
+}
+
+.Card-Icon {
+  width: 80px;
+  height: 80px;
 }
 
 /* ANIMATIONS ETC */

@@ -7,6 +7,8 @@ const DataContext = createContext({})
 export const DataProvider = ({children}) => {
     const dataURL = "http://localhost:3001/bundles"
     const [ bundles, setBundles ] = useState([]) //Might be an object??
+    const [ bundleTitle, setBundleTitle ] = useState('')
+    const [ bundleDescription, setBundleDescription ] = useState('')
     const { data, isLoading, fetchError } = useFetchBundles(dataURL)
     const [ showAnswers, setShowAnswers ] = useState(false) 
     let [ count, setCount ] = useState(1)
@@ -18,7 +20,7 @@ export const DataProvider = ({children}) => {
         <DataContext.Provider
         value={{
             bundles, setBundles, data, isLoading, fetchError, showAnswers, setShowAnswers, count, setCount,
-            questionLength, setQuestionLength
+            questionLength, setQuestionLength, bundleDescription, setBundleDescription, bundleTitle, setBundleTitle
         }}
         >{children}</DataContext.Provider>
     )

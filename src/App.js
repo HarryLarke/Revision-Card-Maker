@@ -3,10 +3,11 @@ import { DataProvider } from './context/DataContext';
 
 import Home from './pages/Home';
 import PracticeCards from './pages/PracticeCards'
-import CreateCards from './pages/CreateCards'
+import CreateBundle from './pages/CreateBundle';
 import ViewCards from './pages/ViewCards'
 import EditCards from './pages/EditCards';
 import Layout from './Layout'
+import CreateCard from './pages/CreateCard';
 
 function App() {
 
@@ -20,8 +21,8 @@ function App() {
           <Route index element={<Home/>}/>
       
           <Route path='/create'>
-            <Route index element={<CreateCards/>}/>
-            <Route path='/create/:id' element={<ViewCards/>}/>
+            <Route index element={<CreateBundle/>}/>
+            
           </Route>
 
           <Route path='/view/:id'>
@@ -36,7 +37,13 @@ function App() {
             <Route index element={<EditCards/>}></Route>
           </Route>
 
+          <Route>
+            <Route path='/createCard/:id' element={<CreateCard/>}/>
+          </Route>
+
         </Route>
+
+
         
       </Routes>
     </DataProvider>

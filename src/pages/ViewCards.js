@@ -5,6 +5,7 @@ import DataContext from "../context/DataContext"
 import Button from "../buttons/Button"
 import ButtonShowAns from "../buttons/ButtonShowAns"
 import CardFeed from "../feeders/CardFeed"
+import MakeCard from "../buttons/MakeCard"
 
 
 const ViewCards = () => {
@@ -36,9 +37,7 @@ const ViewCards = () => {
                 <CardFeed
                 questions = {bundle.questions}
                 />
-                <div
-                className="Bundle"
-                >Add Card</div>
+                <MakeCard/>
             </section>
 
         </main>

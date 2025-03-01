@@ -8,7 +8,8 @@ const AddButton = ({route}) => {
 
         <Link
         to={route}>
-            <AddIcon/>
+            <AddIcon
+            style={'Icon'}/>
         </Link>
     )
 }

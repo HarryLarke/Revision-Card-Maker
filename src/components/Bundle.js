@@ -6,7 +6,7 @@ const Bundle = ({bundle}) => {
 
     const { setShowAnswers } = useContext(DataContext)
 
-    const QNum = bundle.questions.length
+    const QNum = bundle.questions.length 
 
     return (
 
@@ -21,7 +21,7 @@ const Bundle = ({bundle}) => {
         <p
         className="Bundle-Desciption-Title">Description:</p>
         <p>{bundle.description}</p>
-        <p>{`${QNum} Cards`}</p>
+        <p>{QNum} Cards</p>
         </Link>
     )
 }
