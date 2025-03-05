@@ -1,7 +1,7 @@
 {
   "bundles": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Modern Russian History",
       "description": "Questions covering key dates, topics and issues of pre, post and communist Russia.",
       "questions": [
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Post-Modern Architectural Design",
       "description": "Questions covering key dates, architects and styles of Post Modern style.",
       "questions": [
@@ -90,7 +90,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Post-War Expressionism",
       "description": "Evalutaing European expressionism post WW2 in art, poetry and music.",
       "questions": [
@@ -132,7 +132,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Post-Modernity and Minecraft",
       "description": "Revision concerning factual dates and information of the Minecraft series on Post-Modernity.",
       "questions": [
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Why Chix is great! ",
       "description": "Remember...",
       "questions": []

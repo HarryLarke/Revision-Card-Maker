@@ -100,11 +100,11 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
 
   padding: 1rem;
-  gap: 1.5rem;
+  gap: 1rem;
   background-color: var(--PALETTE-WHITE);
 
   overflow-y: auto;
@@ -126,9 +126,6 @@ button {
   background-color: var(--PALETTE-WHITE);
 }
 
-.View {
-  padding: 0;
-}
 
 .Holder {
   gap:1rem;
@@ -295,7 +292,7 @@ button {
   width: 500px;
 
   font-size: 1.5rem;
-  font-family: "Delius Swash Caps", serif;
+  font-family: var(--MAIN-FONT-FAMILY);
   padding: 0.5rem;
   border: 3px solid var(--TEXT-BLACK);
   border-radius: 10px;
@@ -310,6 +307,26 @@ button {
   height: 80px;
 }
 
+.Make-Card {
+  height: 550px;
+  width: 450px;
+
+
+  padding: 1rem;
+  gap: 1rem;
+}
+
+
+.Input-Card {
+  width:350px;
+
+  font-size: 1rem;
+  font-family: var(--MAIN-FONT-FAMILY);
+  padding: 0.2rem;
+  border: 3px solid var(--TEXT-BLACK);
+  border-radius: 10px;
+  background-color: var(--PALETTE-WHITE);
+}
 
 /* TITLES */
 
@@ -370,6 +387,35 @@ button {
   gap: 1rem;
   
   border-top: solid 5px var(--TEXT-BLACK);
+}
+
+.Vertical-Button-Holder {
+  width: 250px;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  gap: 1rem;
+  padding: 1rem;
+
+  background-color: var(--PALETTE-PURPLE);
+  border: solid 5px var(--TEXT-BLACK);
+
+  border-radius: 20px;
+
+}
+
+.Card-Maker-Page-Holder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 1rem;
 }
 
 

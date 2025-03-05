@@ -16,10 +16,8 @@ const ViewCards = () => {
 
     
     return (
-        <main
-        className="Home View"
-        >
-            <header
+        <>
+        <header
             className="View-Header"
             >
                 <h2>{bundle.title}</h2>
@@ -30,17 +28,18 @@ const ViewCards = () => {
                 <ButtonShowAns
                 title={'Answers'}/>
             </header>
-
-
-            <section
-            className="Home Holder">
+        <main
+        className="Home"
+        >
+   
                 <CardFeed
                 questions = {bundle.questions}
                 />
-                <MakeCard/>
-            </section>
+                <MakeCard
+                route={`/createCard/${id}`}/>
 
         </main>
+        </>
 
     
     )

@@ -9,6 +9,8 @@ export const DataProvider = ({children}) => {
     const [ bundles, setBundles ] = useState([]) //Might be an object??
     const [ bundleTitle, setBundleTitle ] = useState('')
     const [ bundleDescription, setBundleDescription ] = useState('')
+    const [ cardQuestion, setCardQuestion ] = useState('')
+    const [ cardAnswer, setCardAnswer ] = useState('')
     const { data, isLoading, fetchError } = useFetchBundles(dataURL)
     const [ showAnswers, setShowAnswers ] = useState(false) 
     let [ count, setCount ] = useState(1)
@@ -20,7 +22,8 @@ export const DataProvider = ({children}) => {
         <DataContext.Provider
         value={{
             bundles, setBundles, data, isLoading, fetchError, showAnswers, setShowAnswers, count, setCount,
-            questionLength, setQuestionLength, bundleDescription, setBundleDescription, bundleTitle, setBundleTitle
+            questionLength, setQuestionLength, bundleDescription, setBundleDescription, bundleTitle, setBundleTitle,
+            cardQuestion, setCardQuestion, cardAnswer, setCardAnswer
         }}
         >{children}</DataContext.Provider>
     )

@@ -2,12 +2,12 @@ import { Link, useParams } from "react-router-dom"
 
 import AddIcon from "../icons/AddIcon"
 
-const MakeCard = () => {
+const MakeCard = ({route}) => {
     const id = useParams() 
-
+    //hmmmm ID is not working here?
     return (
         <Link
-        to={`/createCard/${id}`}
+        to={route}
         className="Bundle Card-Make" 
         >
         <AddIcon
