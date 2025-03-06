@@ -7,6 +7,7 @@ const DataContext = createContext({})
 export const DataProvider = ({children}) => {
     const dataURL = "http://localhost:3001/bundles"
     const [ bundles, setBundles ] = useState([]) //Might be an object??
+    const [ bundleQuestions, setBundleQuestions ] = useState([])
     const [ bundleTitle, setBundleTitle ] = useState('')
     const [ bundleDescription, setBundleDescription ] = useState('')
     const [ cardQuestion, setCardQuestion ] = useState('')
@@ -23,7 +24,7 @@ export const DataProvider = ({children}) => {
         value={{
             bundles, setBundles, data, isLoading, fetchError, showAnswers, setShowAnswers, count, setCount,
             questionLength, setQuestionLength, bundleDescription, setBundleDescription, bundleTitle, setBundleTitle,
-            cardQuestion, setCardQuestion, cardAnswer, setCardAnswer
+            cardQuestion, setCardQuestion, cardAnswer, setCardAnswer, bundleQuestions, setBundleQuestions
         }}
         >{children}</DataContext.Provider>
     )

@@ -10,8 +10,11 @@ import DataContext from "../context/DataContext"
 const CreateCard = () => {
 
     const { saveCard } = useCreateCards()
-    const { cardQuestion ,setCardQuestion, cardAnswer, setCardAnswer } = useContext(DataContext)
+    const { cardQuestion ,setCardQuestion, cardAnswer, setCardAnswer, questionLength } = useContext(DataContext)
     const { id } = useParams()
+
+
+    
     return (
         <main
         className="Home">
@@ -27,7 +30,7 @@ const CreateCard = () => {
             className="Practice-Card Make-Card">
             <h3 
             className="Practice-Title">
-                Question: 1</h3> 
+                Question: {questionLength}</h3> 
             <p
             className="Practice-Question"
             >Please add a qusestion.</p>
@@ -44,7 +47,7 @@ const CreateCard = () => {
 
             <p
             className="Practice-Answer"
-            >please add an answer.</p>
+            >Please add an answer.</p>
             <label htmlFor="CardAns"/>
             <textarea
             className="Input-Card"

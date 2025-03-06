@@ -1,5 +1,5 @@
-import { useParams, useNavigate, Link} from "react-router-dom"
-import { useContext, useState } from "react"
+import { useParams} from "react-router-dom"
+import { useContext} from "react"
 
 import DataContext from "../context/DataContext"
 import PracticeCardFeed from "../feeders/PracticeCardFeed"

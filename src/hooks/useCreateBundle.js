@@ -20,10 +20,10 @@ const useCreateBundle = () => {
         const saveBundle = async (e) => {
             e.preventDefault()
             
-          // do I need this??? ...probably
-            const id = bundles.length + 1 //Look into the logic of this one!
-            //pass into questions now or later?? For now just see if you can get the bundles made! -- would be dryer!
-            const newBundle = {id, title:bundleTitle, description:bundleDescription, questions: questionsObj.questions }
+
+            const id = bundles.length + 1 
+            
+            const newBundle = {id:id, title:bundleTitle, description:bundleDescription, questions: questionsObj.questions }
 
             try {
                 const response = await api.post('/bundles', newBundle) 

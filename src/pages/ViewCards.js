@@ -1,5 +1,5 @@
-import { useParams, useNavigate, Link} from "react-router-dom"
-import { useContext, useState } from "react"
+import { useParams } from "react-router-dom"
+import { useContext } from "react"
 import DataContext from "../context/DataContext"
 
 import Button from "../buttons/Button"
@@ -10,11 +10,13 @@ import MakeCard from "../buttons/MakeCard"
 
 const ViewCards = () => {
     const {id} = useParams()
-    const { bundles } = useContext(DataContext)
+    const { bundles, setQuestionLength, setBundleQuestions } = useContext(DataContext)
     
     const bundle = bundles.find(bundle => (bundle.id).toString() === id)
 
-    
+    setQuestionLength(bundle.questions.length + 1)
+    setBundleQuestions(bundle.questions) 
+
     return (
         <>
         <header
