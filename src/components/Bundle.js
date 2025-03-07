@@ -4,16 +4,21 @@ import DataContext from "../context/DataContext"
 
 const Bundle = ({bundle}) => {
 
-    const { setShowAnswers } = useContext(DataContext)
+    const { setShowAnswers, setBundleQuestions, setSelectedBundleTitle } = useContext(DataContext)
 
     const QNum = bundle.questions.length 
+    
 
     return (
 
         <Link
         className="Bundle"
         to={`/view/${bundle.id}`}
-        onClick={() => setShowAnswers(false)}
+        onClick={() => {
+            setShowAnswers(false)
+            setBundleQuestions(bundle.questions)
+            setSelectedBundleTitle(bundle.title)
+        }}
         >
         <h3
         className="Bundle-Title"

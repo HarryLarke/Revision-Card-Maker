@@ -5,15 +5,14 @@ import { useNavigate } from "react-router-dom"
 
 
 import DataContext from "../context/DataContext"
-import api from '../api/cards'
+import bundlesApi from "../api/bundles"
 
 //Do we want to pass in dataURL?
 const useCreateBundle = () => {
   
     const navigate = useNavigate()
     const { bundles, setBundles, setBundleTitle, bundleTitle, setBundleDescription, bundleDescription } =  useContext(DataContext)
-    const questionsObj = {"questions": []}
-  
+
 
     console.log(bundleTitle, bundleDescription)
 
@@ -23,10 +22,10 @@ const useCreateBundle = () => {
 
             const id = bundles.length + 1 
             
-            const newBundle = {id:id, title:bundleTitle, description:bundleDescription, questions: questionsObj.questions }
+            const newBundle = {id:id, title:bundleTitle, description:bundleDescription}
 
             try {
-                const response = await api.post('/bundles', newBundle) 
+                const response = await bundlesApi.post('/bundles', newBundle) 
                 const allBundles = [...bundles, response.data]
                 setBundles(allBundles)
                 setBundleTitle('')

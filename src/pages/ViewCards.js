@@ -9,20 +9,20 @@ import MakeCard from "../buttons/MakeCard"
 
 
 const ViewCards = () => {
-    const {id} = useParams()
-    const { bundles, setQuestionLength, setBundleQuestions } = useContext(DataContext)
+    const { id } = useParams()
+    const { setQuestionLength, bundleQuestions, selectedBundleTitle, isCardLoading, fetchCardError } = useContext(DataContext) //sort outt passing in bundle??
     
-    const bundle = bundles.find(bundle => (bundle.id).toString() === id)
 
-    setQuestionLength(bundle.questions.length + 1)
-    setBundleQuestions(bundle.questions) 
-
+    setQuestionLength(bundleQuestions.length + 1) //Destructuing here or elsehere in usecontext??? 
+    //Add an error boundry!
     return (
         <>
+
+
         <header
             className="View-Header"
             >
-                <h2>{bundle.title}</h2>
+                <h2>{selectedBundleTitle}</h2>
                 <Button
                 title = {'Practice'}
                 route = {`/practice/${id}`}
@@ -30,15 +30,18 @@ const ViewCards = () => {
                 <ButtonShowAns
                 title={'Answers'}/>
             </header>
+
         <main
-        className="Home"
-        >
-   
-                <CardFeed
-                questions = {bundle.questions}
-                />
-                <MakeCard
-                route={`/createCard/${id}`}/>
+        className="Home">
+        {isCardLoading && <h2>Loading Cards...</h2>}
+
+        {!isCardLoading && fetchCardError && <h2
+        className="Error"
+        >{fetchCardError}</h2>}
+
+        {!isCardLoading && !fetchCardError && <CardFeed
+                questions = {bundleQuestions}
+                />}
 
         </main>
         </>

@@ -2,13 +2,13 @@ import { useContext } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 
 import DataContext from "../context/DataContext"
-import api from '../api/cards'
-
+import cardsApi from '../api/cards'
+//Will need re-working!!!!!!!!! 
 const useCreateCards = () => {
 
-    const { cardQuestion ,setCardQuestion, cardAnswer, setCardAnswer, questionLength, bundleQuestions, setBundleQuestions } = useContext(DataContext)
+    const { bundleQuestions, setBundleQuestions, cardQuestion ,setCardQuestion, cardAnswer, setCardAnswer, questionLength } = useContext(DataContext)
     const { id } = useParams()
-    const bundleId = parseInt(id)
+    const bundleId = parseInt(id) 
     const navigate = useNavigate()
 
     const saveCard = async (e) => {
@@ -17,20 +17,15 @@ const useCreateCards = () => {
         console.log(questionLength)
 
         const newQuestion = {
-            id: questionLength,
+            bundleId: id, 
+            id: questionLength + 1, 
             question: cardQuestion,
             answer: cardAnswer
         } 
         //This will look drastically different when backend is setup! 
         try {
-            const bundleResponse = await api.get(`/bundles/${bundleId}`)
-            const bundle = bundleResponse.data
-
-            const updatedQuestions = [...bundle.questions, newQuestion] 
-
-            const response = await api.patch(`/bundles/${bundleId}`, {questions: updatedQuestions})
-
-            const allQuestions = [response.data.questions]
+            const response = await cardsApi.post('/questions', newQuestion)
+            const allQuestions = [...bundleQuestions, response.data]
             setBundleQuestions(allQuestions)
             setCardAnswer('')
             setCardQuestion('')
@@ -39,10 +34,12 @@ const useCreateCards = () => {
             console.log(`Error ${err.message}`)
         }  finally {
             console.log('Question posted!')
-            navigate(`/view/${id}`)
+            navigate(`/`)
         }
     } 
     return {saveCard}
 }
 
 export default useCreateCards
+
+//Still some issues witht rendering! - maybe put in a useEffect in DataContext?
