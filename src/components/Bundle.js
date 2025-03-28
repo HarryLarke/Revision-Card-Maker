@@ -6,7 +6,7 @@ const Bundle = ({bundle}) => {
 
     const { setShowAnswers, setBundleQuestions, setSelectedBundleTitle } = useContext(DataContext)
 
-    const QNum = bundle.questions.length 
+    const QNum = bundle.questions
     
 
     return (

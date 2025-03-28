@@ -4,4 +4,4 @@ const cardsApi = axios.create({
     baseURL: 'http://localhost:3001',
 })
 
-export default api
+export default cardsApi

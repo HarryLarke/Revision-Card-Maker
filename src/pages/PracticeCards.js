@@ -8,12 +8,22 @@ import ButtonNext from "../buttons/ButtonNext"
 import ButtonShowAns from "../buttons/ButtonShowAns"
 
 const PracticeCards = () => {
-    const { id } = useParams()
-    const { bundles } = useContext(DataContext)
+
     let { count, questionLength } = useContext(DataContext)
 
-
-    const bundle = bundles.find(bundle => (bundle.id).toString() === id)
+    const bundle = [
+        {
+           "id": 11,
+           "bundleId": 1,
+           "question": "What is the capital of the UK?",
+           "answer": "London"
+         },
+         {
+           "id": 12,
+           "bundleId": 1,
+           "question": "Why is Minecraft so great?",
+           "answer": "Combination of freedom, simplicity and creativity in the game."
+         }]
 
     return (
 

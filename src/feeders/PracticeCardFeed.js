@@ -9,8 +9,9 @@ const PracticeCardFeed = ({questions}) => {
     let { count, questionLength, setQuestionLength } = useContext(DataContext)
 
     
-    setQuestionLength(questions.length) //Maybe do this elsewhere??
-    const question = questions.find(question => question.id === count)
+    setQuestionLength(questions) //Maybe do this elsewhere??
+    //Counter and count assignment need - probably id's reordered within the array then matched with count?? 
+    const question = questions.filter(question => question.id === count)
   
 /*     if (count === questionLength + 1) {console.log('Finished!')}  */
 

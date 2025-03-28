@@ -1,28 +1,29 @@
 import { useParams } from "react-router-dom"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import DataContext from "../context/DataContext"
 
 import Button from "../buttons/Button"
 import ButtonShowAns from "../buttons/ButtonShowAns"
 import CardFeed from "../feeders/CardFeed"
 import MakeCard from "../buttons/MakeCard"
+import useFetchQuestions from "../hooks/useFetchQuestions"
 
+const cardDataURL = "http://localhost:3001/questions"
 
 const ViewCards = () => {
     const { id } = useParams()
-    const { setQuestionLength, bundleQuestions, selectedBundleTitle, isCardLoading, fetchCardError } = useContext(DataContext) //sort outt passing in bundle??
-    
+    const { cardData, isCardLoading, fetchCardError} = useFetchQuestions(cardDataURL)
 
-    setQuestionLength(bundleQuestions.length + 1) //Destructuing here or elsehere in usecontext??? 
+
+    const questions = cardData//Destructuing here or elsehere in usecontext??? 
     //Add an error boundry!
     return (
         <>
 
-
         <header
             className="View-Header"
             >
-                <h2>{selectedBundleTitle}</h2>
+                <h2>Title Required!</h2>
                 <Button
                 title = {'Practice'}
                 route = {`/practice/${id}`}
@@ -40,9 +41,8 @@ const ViewCards = () => {
         >{fetchCardError}</h2>}
 
         {!isCardLoading && !fetchCardError && <CardFeed
-                questions = {bundleQuestions}
+                questions = {questions}
                 />}
-
         </main>
         </>
 

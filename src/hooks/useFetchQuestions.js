@@ -2,7 +2,7 @@ import axios from "axios"
 
 import { useState, useEffect } from "react"
 
-const useFetchBundles = (dataUrl) => {
+const useFetchQuestions = (dataUrl) => {
     const [ cardData, setCardData ] = useState([])
     const [ fetchCardError, setFetchCardError ] = useState(null) 
     const [ isCardLoading, setIsCardLoading ] = useState(false)
@@ -25,7 +25,7 @@ const useFetchBundles = (dataUrl) => {
                 catch(err) {
                     if(isMounted) {
                         setFetchCardError(err.message)
-                        setData([])
+                        setCardData([])
                     }
                 } finally { isMounted && setIsCardLoading(false)}
                 
@@ -44,5 +44,4 @@ const useFetchBundles = (dataUrl) => {
 
     return { cardData, fetchCardError, isCardLoading }
 }
-
-export default useFetchBundles
+export default useFetchQuestions 
