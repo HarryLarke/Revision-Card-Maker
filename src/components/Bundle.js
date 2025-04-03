@@ -4,7 +4,7 @@ import DataContext from "../context/DataContext"
 
 const Bundle = ({bundle}) => {
 
-    const { setShowAnswers, setBundleQuestions, setSelectedBundleTitle } = useContext(DataContext)
+    const { setShowAnswers, setSelectedBundleTitle } = useContext(DataContext)
 
     const QNum = bundle.questions
     
@@ -16,7 +16,6 @@ const Bundle = ({bundle}) => {
         to={`/view/${bundle.id}`}
         onClick={() => {
             setShowAnswers(false)
-            setBundleQuestions(bundle.questions)
             setSelectedBundleTitle(bundle.title)
         }}
         >

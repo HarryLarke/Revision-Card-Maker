@@ -1,38 +1,38 @@
-import { useParams} from "react-router-dom"
-import { useContext} from "react"
+import { useContext } from "react"
+import { useParams } from "react-router-dom"
 
-import DataContext from "../context/DataContext"
 import PracticeCardFeed from "../feeders/PracticeCardFeed"
 import ButtonPrev from "../buttons/ButtonPrev"
 import ButtonNext from "../buttons/ButtonNext"
 import ButtonShowAns from "../buttons/ButtonShowAns"
+import DataContext from "../context/DataContext"
+import useFetchQuestions from "../hooks/useFetchQuestions"
 
 const PracticeCards = () => {
+    const { id } = useParams()
+    const cardDataURL = "http://localhost:3001/questions" 
+    const { cardData, isCardLoading, fetchCardError} = useFetchQuestions(cardDataURL)
+    let { count, questionLength, setQuestionLength } = useContext(DataContext)
 
-    let { count, questionLength } = useContext(DataContext)
-
-    const bundle = [
-        {
-           "id": 11,
-           "bundleId": 1,
-           "question": "What is the capital of the UK?",
-           "answer": "London"
-         },
-         {
-           "id": 12,
-           "bundleId": 1,
-           "question": "Why is Minecraft so great?",
-           "answer": "Combination of freedom, simplicity and creativity in the game."
-         }]
+    const questions = cardData.filter(question => question.bundleId === Number(id))
+    if(questions) {setQuestionLength(questions.length)}
 
     return (
-
        <main
        className="Practice">
         
-            <PracticeCardFeed
-            questions = {bundle.questions}
-            />
+        <section
+        className="Home">
+        {isCardLoading && <h2>Loading Cards...</h2>}
+
+        {!isCardLoading && fetchCardError && <h2
+        className="Error"
+        >{fetchCardError}</h2>}
+
+        {!isCardLoading && !fetchCardError && <PracticeCardFeed questions={questions}/>
+                }
+        </section>
+            
 
             {count <= questionLength &&
             <section

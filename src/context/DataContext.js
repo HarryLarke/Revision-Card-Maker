@@ -1,7 +1,5 @@
-import { redirect } from "react-router-dom";
 import useFetchBundles from "../hooks/useFetchBundles";
 import useFetchQuestions from '../hooks/useFetchQuestions'
-import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
 const DataContext = createContext({})
@@ -23,7 +21,7 @@ export const DataProvider = ({children}) => {
     const [ bundleDescription, setBundleDescription ] = useState('')
 
     //For Making Cards
-    const [ cardQuestion, setCardQuestion ] = useState('')
+    const [ cardQuestion, setCardQuestion ] = useState('') //maybe use this in component???
     const [ cardAnswer, setCardAnswer ] = useState('')
     
     //For Practice Mode, ETC

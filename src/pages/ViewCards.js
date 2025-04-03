@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import DataContext from "../context/DataContext"
 
 import Button from "../buttons/Button"
@@ -13,17 +13,23 @@ const cardDataURL = "http://localhost:3001/questions"
 const ViewCards = () => {
     const { id } = useParams()
     const { cardData, isCardLoading, fetchCardError} = useFetchQuestions(cardDataURL)
+    const { bundles } = useContext(DataContext)
+    const questions = cardData
 
 
-    const questions = cardData//Destructuing here or elsehere in usecontext??? 
-    //Add an error boundry!
+
+    let bundleTitle = 'Loading Title'
+    if(bundles) {
+    const selectedBundle = bundles.find(bundle => bundle.id === id)
+    bundleTitle = selectedBundle.title }
+
+
     return (
         <>
-
-        <header
+            <header
             className="View-Header"
             >
-                <h2>Title Required!</h2>
+                <h2>{bundleTitle}</h2>
                 <Button
                 title = {'Practice'}
                 route = {`/practice/${id}`}
@@ -33,20 +39,18 @@ const ViewCards = () => {
             </header>
 
         <main
-        className="Home">
-        {isCardLoading && <h2>Loading Cards...</h2>}
+            className="Home">
+            {isCardLoading && <h2>Loading Cards...</h2>}
 
-        {!isCardLoading && fetchCardError && <h2
-        className="Error"
-        >{fetchCardError}</h2>}
+            {!isCardLoading && fetchCardError && <h2
+            className="Error"
+            >{fetchCardError}</h2>}
 
-        {!isCardLoading && !fetchCardError && <CardFeed
-                questions = {questions}
-                />}
+            {!isCardLoading && !fetchCardError && <CardFeed
+                    bundleQuestions = {questions}
+                    />}
         </main>
         </>
-
-    
     )
 
 }

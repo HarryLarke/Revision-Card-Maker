@@ -1,24 +1,20 @@
-import { useContext } from "react"
 import { useParams } from "react-router-dom"
-
-import DataContext from "../context/DataContext"
 import Card from "../components/Card"
 import MakeCard from "../buttons/MakeCard"
 
-const CardFeed = ({questions}) => {
 
+const CardFeed = ({bundleQuestions}) => {
 const { id } = useParams()
-const bundleId = Number(id)
 
-const { setQuestionLength } = useContext(DataContext) //Is this the best location for setting question length
-
-    const bundleQuestions = questions.filter(question => question.bundleId === bundleId)
-
+const questions = bundleQuestions.filter(question => question.bundleId === Number(id))
+    let count = 0 
     let content 
-    content = bundleQuestions?.map(question => 
+
+
+    content = questions?.map(question => 
                 <Card
                 key = {question.id}
-                number = {question.id}
+                number = {count += 1}
                 question={question.question}
                 answer={question.answer}
                 ></Card>)
@@ -30,7 +26,7 @@ const { setQuestionLength } = useContext(DataContext) //Is this the best locatio
             <MakeCard
             route={`/createCard/${id}`}/>
         </>
-    )
+    )//Will need to send data of question number here? maybe a setCount??? Or passing in data of card into this area - to access data such as id's ect? 
 }
 
 export default CardFeed
