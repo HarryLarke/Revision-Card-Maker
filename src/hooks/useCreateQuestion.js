@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { useParams, useNavigate } from "react-router-dom"
+import { nanoid } from 'nanoid'
 
 import DataContext from "../context/DataContext"
 import cardsApi from '../api/cards'
@@ -10,6 +11,10 @@ const useCreateCards = () => {
     const { id } = useParams()
     const bundleId = parseInt(id) 
     const navigate = useNavigate()
+    console.log(questionLength)
+    let qNum 
+    if(questionLength === 0) { qNum = 1}
+    else qNum = questionLength + 1 
 
     const saveCard = async (e) => {
         e.preventDefault()
@@ -17,8 +22,9 @@ const useCreateCards = () => {
         console.log(questionLength)
 
         const newQuestion = {
-            bundleId: id, 
-            id: questionLength + 1, 
+            bundleId: bundleId, 
+            id: nanoid(), 
+            qNum, 
             question: cardQuestion,
             answer: cardAnswer
         } 

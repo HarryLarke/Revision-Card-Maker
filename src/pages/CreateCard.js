@@ -5,15 +5,21 @@ import useCreateCards from "../hooks/useCreateQuestion"
 
 import Button from "../buttons/Button"
 import DataContext from "../context/DataContext"
+import useFetchQuestions from "../hooks/useFetchQuestions"
+
+const cardDataURL = "http://localhost:3001/questions"
+
 
 //Will need a question or card counter - might be able to re-use a previous hook??? 
-const CreateCard = () => {
-
+const CreateCard = () =>  {
     const { saveCard } = useCreateCards()
-    const { cardQuestion ,setCardQuestion, cardAnswer, setCardAnswer, questionLength } = useContext(DataContext)
+    const { cardQuestion ,setCardQuestion, cardAnswer, setCardAnswer, questionLength, setQuestionLength } = useContext(DataContext)
     const { id } = useParams()
 
+    const { cardData } = useFetchQuestions(cardDataURL) //Don't know if I can set state here?? It's abit weird -- Again redux!!!
 
+    const questions = cardData.filter(question => question.bundleId === Number(id))
+    if(questions) {setQuestionLength(questions.length)}
     
     return (
         <main

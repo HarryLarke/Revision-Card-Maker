@@ -1,7 +1,6 @@
-import useFetchBundles from "../hooks/useFetchBundles";
 import useFetchQuestions from '../hooks/useFetchQuestions'
+import useFetchBundles from '../hooks/useFetchBundles'
 import { createContext, useEffect, useState } from "react";
-
 const DataContext = createContext({})
 
 export const DataProvider = ({children}) => {
@@ -27,7 +26,7 @@ export const DataProvider = ({children}) => {
     //For Practice Mode, ETC
     const [ showAnswers, setShowAnswers ] = useState(false) 
     let [ count, setCount ] = useState(1)
-    let [ questionLength, setQuestionLength ] = useState(1) // Maybe employ a useEffect to reset back to 1? Instead of reseting it everywhere Or maybe have it remeber it?
+    let [ questionLength, setQuestionLength ] = useState(0) // Maybe employ a useEffect to reset back to 1? Instead of reseting it everywhere Or maybe have it remeber it?
 
     //Varying UseEffects for Fetching and loading data
     useEffect(() => {setBundles(data)}, [data])

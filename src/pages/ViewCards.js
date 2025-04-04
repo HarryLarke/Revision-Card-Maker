@@ -18,10 +18,11 @@ const ViewCards = () => {
 
 
 
-    let bundleTitle = 'Loading Title'
-    if(bundles) {
-    const selectedBundle = bundles.find(bundle => bundle.id === id)
-    bundleTitle = selectedBundle.title }
+    const selectedBundle = bundles.find(bundle => bundle.id === Number(id))
+
+    let title  
+    if(selectedBundle) { title = selectedBundle.title}
+    if(!selectedBundle) { title = 'Loading title...'}
 
 
     return (
@@ -29,7 +30,7 @@ const ViewCards = () => {
             <header
             className="View-Header"
             >
-                <h2>{bundleTitle}</h2>
+                <h2>{title}</h2>
                 <Button
                 title = {'Practice'}
                 route = {`/practice/${id}`}
