@@ -4,8 +4,8 @@ import { createContext, useEffect, useState } from "react";
 const DataContext = createContext({})
 
 export const DataProvider = ({children}) => {
-    const bundleDataURL = "http://localhost:3002/bundles"
-    const cardDataURL = "http://localhost:3001/questions"
+    const bundleDataURL = "http://localhost:3500/bundles"
+    const cardDataURL = "http://localhost:3500/questions"
     const { data, isLoading, fetchError } = useFetchBundles(bundleDataURL)
     const { cardData, isCardLoading, fetchCardError} = useFetchQuestions(cardDataURL)
 

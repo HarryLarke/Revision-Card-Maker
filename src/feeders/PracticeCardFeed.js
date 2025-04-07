@@ -13,8 +13,6 @@ const PracticeCardFeed = ({questions}) => {
     console.log(questionLength)
     console.log(count)
 
-    
-
     return (
         <>
         {question && count <= questionLength && <PracticeCard

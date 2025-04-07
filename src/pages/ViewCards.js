@@ -8,7 +8,7 @@ import CardFeed from "../feeders/CardFeed"
 import MakeCard from "../buttons/MakeCard"
 import useFetchQuestions from "../hooks/useFetchQuestions"
 
-const cardDataURL = "http://localhost:3001/questions"
+const cardDataURL = "http://localhost:3500/questions"
 
 const ViewCards = () => {
     const { id } = useParams()

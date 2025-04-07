@@ -5,7 +5,8 @@ import Home from './pages/Home';
 import PracticeCards from './pages/PracticeCards'
 import CreateBundle from './pages/CreateBundle';
 import ViewCards from './pages/ViewCards'
-import EditCards from './pages/EditCards';
+import EditCard from './pages/EditCard'
+import ViewCard from './pages/ViewCard';
 import Layout from './Layout'
 import CreateCard from './pages/CreateCard';
 
@@ -33,8 +34,9 @@ function App() {
             <Route index element={<PracticeCards/>}/>
           </Route>
 
-          <Route path='/edit/:id'>
-            <Route index element={<EditCards/>}></Route>
+          <Route path='/viewCard/:id'>
+            <Route index element={<ViewCard/>}/>
+            <Route path='/viewCard/:id/edit' element={<EditCard/>}/>
           </Route>
 
           <Route>

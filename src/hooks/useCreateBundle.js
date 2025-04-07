@@ -7,7 +7,7 @@ import DataContext from "../context/DataContext"
 
 const useCreateBundle = () => {
     const { bundles, setBundles, setBundleTitle, bundleTitle, setBundleDescription, bundleDescription } = useContext(DataContext)
-    const apiURL = 'http://localhost:3002/bundles'
+    const apiURL = 'http://localhost:3500/bundles'
     const navigate = useNavigate() 
 
         const saveBundle = async (e) => {

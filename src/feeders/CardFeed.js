@@ -14,6 +14,7 @@ const questions = bundleQuestions.filter(question => question.bundleId === Numbe
     content = questions?.map(question => 
                 <Card
                 key = {question.id}
+                id = {question.id}
                 number = {count += 1}
                 question={question.question}
                 answer={question.answer}

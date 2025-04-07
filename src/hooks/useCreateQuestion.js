@@ -1,12 +1,14 @@
 import { useContext } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { nanoid } from 'nanoid'
+import axios from "axios"
 
 import DataContext from "../context/DataContext"
 import cardsApi from '../api/cards'
 //Will need re-working!!!!!!!!! 
 const useCreateCards = () => {
 
+    const apiURL = 'http://localhost:3500/questions'
     const { bundleQuestions, setBundleQuestions, cardQuestion ,setCardQuestion, cardAnswer, setCardAnswer, questionLength } = useContext(DataContext)
     const { id } = useParams()
     const bundleId = parseInt(id) 
@@ -30,7 +32,7 @@ const useCreateCards = () => {
         } 
         //This will look drastically different when backend is setup! 
         try {
-            const response = await cardsApi.post('/questions', newQuestion)
+            const response = await axios.post(apiURL, newQuestion)
             const allQuestions = [...bundleQuestions, response.data]
             setBundleQuestions(allQuestions)
             setCardAnswer('')

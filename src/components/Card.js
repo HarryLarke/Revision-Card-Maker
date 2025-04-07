@@ -1,14 +1,16 @@
 import { useContext } from "react"
 import DataContext from "../context/DataContext"
+import { Link } from "react-router-dom"
 
 
-const Card = ({number, question, answer}) => {
+const Card = ({id, number, question, answer}) => {
 
     const { showAnswers } = useContext(DataContext)
-
     return (
-        <div
-        className="Bundle Card">
+        <Link
+        className="Bundle Card"
+        to={`/viewCard/${id}`}
+        >
             <h3 
             className="Card-Title">
                 Question: {number}</h3>
@@ -20,7 +22,7 @@ const Card = ({number, question, answer}) => {
                 className="Answer"
                 >{answer}</p>
             }
-        </div>
+        </Link>
     )
 }
 
