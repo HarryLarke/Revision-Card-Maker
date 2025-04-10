@@ -1,10 +1,19 @@
 import { useParams } from "react-router-dom"
+import { useContext } from "react"
 
 import ButtonPrev from "../buttons/ButtonPrev"
 import Button from "../buttons/Button"
+import useKeyPress from "../hooks/useKeyPress"
+import DataContext from "../context/DataContext"
 
 const FinishCard = () => {
     const {id} = useParams()
+
+    const { setShowAnswers } = useContext(DataContext) 
+    let { count, setCount } = useContext(DataContext)
+
+    useKeyPress("ArrowLeft", () => { if(count > 1) {setCount(count -= 1)
+        setShowAnswers(false)}})
 
     return (
         <div

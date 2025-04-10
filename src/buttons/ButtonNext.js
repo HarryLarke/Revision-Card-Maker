@@ -11,6 +11,7 @@ const ButtonNext = () => {
         onClick={() => {if(count <= questionLength) {setCount(count += 1)
             setShowAnswers(false)}} //Stop the question ccount going crazy high, whether I later chose to reset or remeber count outside the practice?
         }
+
         >Next</div>
     )
 }

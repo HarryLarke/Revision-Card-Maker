@@ -7,7 +7,7 @@ import Button from "../buttons/Button"
 import DataContext from "../context/DataContext"
 import useFetchQuestions from "../hooks/useFetchQuestions"
 
-const cardDataURL = "http://localhost:3001/questions"
+const cardDataURL = "http://localhost:3500/questions"
 
 
 //Will need a question or card counter - might be able to re-use a previous hook??? 

@@ -1,9 +1,20 @@
 import { useContext } from "react"
 import DataContext from "../context/DataContext"
+import useKeyPress from "../hooks/useKeyPress"
 
 const PracticeCard = ({number, question, answer}) => {
 
-    const { showAnswers } = useContext(DataContext)
+    const { showAnswers, setShowAnswers} = useContext(DataContext)
+    let { count, setCount, questionLength } = useContext(DataContext)
+
+    useKeyPress("ArrowRight", () => {if(count <= questionLength) {setCount(count += 1)
+        setShowAnswers(false)}})
+
+    useKeyPress("ArrowLeft", () => { if(count > 1) {setCount(count -= 1)
+        setShowAnswers(false)}})
+
+    useKeyPress("Space", () => {setShowAnswers(!showAnswers)})
+
 
     return (
         <div

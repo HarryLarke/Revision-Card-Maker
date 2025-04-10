@@ -2,13 +2,17 @@ import Button from "../buttons/Button"
 import ButtonShowAns from "../buttons/ButtonShowAns"
 import useFetchQuestions from "../hooks/useFetchQuestions"
 import PracticeCard from "../components/PracticeCard"
+import DataContext from "../context/DataContext"
 
 import { useParams } from "react-router-dom"
+import { useContext } from "react"
+
 
 
 const ViewCard = () => {
     const { id } = useParams()
     const cardDataURL = "http://localhost:3500/questions" 
+    const { setCard }  = useContext(DataContext)
     const { cardData, isCardLoading, fetchCardError} = useFetchQuestions(cardDataURL)
 
     const question = cardData.find(question => question.id === id)
@@ -16,6 +20,7 @@ const ViewCard = () => {
     let bundleId = "/"
     if(question) {
         bundleId = `/view/${question.bundleId}`
+        setCard(question)
     }
 //Probably need some form of setting function - so to transfer data to edit? 
 //Maybe keep in the same route?
@@ -45,7 +50,7 @@ const ViewCard = () => {
         <ButtonShowAns title={'Answer'}/>
         
         <Button
-        route={`viewCards/:id/edit`}
+        route={`edit`}
         title={"Edit"}
         />
 
