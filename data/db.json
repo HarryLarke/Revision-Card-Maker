@@ -1,17 +1,17 @@
 {
   "bundles": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Modern Russian History",
       "description": "Questions covering key dates, topics and issues of pre, post and communist Russia."
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Post-Modern Architectural Design",
       "description": "Questions covering key dates, architects and styles of Post Modern style."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Test Bundle...",
       "description": "Let's see if this posts correctly."
     }
@@ -119,8 +119,8 @@
       "id": "WD32J4S0MAir_knLVDcFR",
       "bundleId": 3,
       "qNum": 1,
-      "question": "dsfasdf",
-      "answer": "asdfasdf"
+      "question": "Let's see if the edit function works?",
+      "answer": "Hopefully it does!"
     },
     {
       "id": "JQ8KKoAuZ2Gyl65ML9lM1",

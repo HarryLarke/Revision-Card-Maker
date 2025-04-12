@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { useParams } from "react-router-dom"
 
+import useEditQuestion from "../hooks/useEditQuestion"
 import Button from "../buttons/Button"
 import DataContext from "../context/DataContext"
 
@@ -10,7 +11,8 @@ const cardDataURL = "http://localhost:3500/questions"
 //Will need a question or card counter - might be able to re-use a previous hook??? 
 const EditCard = () =>  {
 
-    const { card, setCardQuestion, setCardAnswer } = useContext(DataContext)
+    const { editCard } = useEditQuestion()
+    const { card, cardQuestion, setCardQuestion, cardAnswer, setCardAnswer } = useContext(DataContext)
     const { id } = useParams()
     console.log(card)
 
@@ -21,7 +23,7 @@ const EditCard = () =>  {
 
         <form 
         action="submit"
-        onSubmit={console.log("Savning Edit!!")}
+        onSubmit={editCard}
         className="Card-Maker-Page-Holder"
 
         >
@@ -38,7 +40,7 @@ const EditCard = () =>  {
             <textarea
             className="Input-Card"
             id="CardQuest"
-            value={card.question}
+            value={cardQuestion}
             placeholder="Question here:"
             onChange={(e) => setCardQuestion(e.target.value)}
             rows="4"
@@ -52,7 +54,7 @@ const EditCard = () =>  {
             <textarea
             className="Input-Card"
             id="CardAns"
-            value={card.answer}
+            value={cardAnswer}
             placeholder="Answer here:"
             onChange={(e) => setCardAnswer(e.target.value)}
             rows="4"

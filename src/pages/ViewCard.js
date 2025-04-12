@@ -12,7 +12,7 @@ import { useContext } from "react"
 const ViewCard = () => {
     const { id } = useParams()
     const cardDataURL = "http://localhost:3500/questions" 
-    const { setCard }  = useContext(DataContext)
+    const { setCard, setCardQuestion, setCardAnswer }  = useContext(DataContext)
     const { cardData, isCardLoading, fetchCardError} = useFetchQuestions(cardDataURL)
 
     const question = cardData.find(question => question.id === id)
@@ -21,6 +21,8 @@ const ViewCard = () => {
     if(question) {
         bundleId = `/view/${question.bundleId}`
         setCard(question)
+        setCardQuestion(question.question)
+        setCardAnswer(question.answer)
     }
 //Probably need some form of setting function - so to transfer data to edit? 
 //Maybe keep in the same route?

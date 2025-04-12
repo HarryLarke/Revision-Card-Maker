@@ -12,21 +12,14 @@ import useKeyPress from "../hooks/useKeyPress"
 const PracticeCards = () => {
     const { id } = useParams()
     const cardDataURL = "http://localhost:3500/questions" 
-    const { cardData, isCardLoading, fetchCardError, showAnswers, setShowAnswers } = useFetchQuestions(cardDataURL)
+    const { cardData, isCardLoading, fetchCardError } = useFetchQuestions(cardDataURL)
     let { count, setCount, questionLength, setQuestionLength } = useContext(DataContext)
 
     const questions = cardData.filter(question => question.bundleId === Number(id))
     if(questions) {setQuestionLength(questions.length)}
 
 
-    useKeyPress("ArrowRight", () => {if(count <= questionLength) {setCount(count += 1)
-            setShowAnswers(false)}}
-    )
 
-    useKeyPress("ArrowLeft", () => { if(count > 1) {setCount(count -= 1)
-            setShowAnswers(false)}})
-    
-    useKeyPress("Space", () => {setShowAnswers(!showAnswers)})
 
     return (
        <main
