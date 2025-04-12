@@ -5,7 +5,6 @@ import DataContext from "../context/DataContext"
 import Button from "../buttons/Button"
 import ButtonShowAns from "../buttons/ButtonShowAns"
 import CardFeed from "../feeders/CardFeed"
-import MakeCard from "../buttons/MakeCard"
 import useFetchQuestions from "../hooks/useFetchQuestions"
 
 const cardDataURL = "http://localhost:3500/questions"
@@ -17,12 +16,10 @@ const ViewCards = () => {
     const questions = cardData
 
 
-
-    const selectedBundle = bundles.find(bundle => bundle.id === Number(id))
-
-    let title  
+    const selectedBundle = bundles[Number(id) - 1]
+     let title  
     if(selectedBundle) { title = selectedBundle.title}
-    if(!selectedBundle) { title = 'Loading title...'}
+    if(!selectedBundle) { title = 'Loading title...'} 
 
 
     return (

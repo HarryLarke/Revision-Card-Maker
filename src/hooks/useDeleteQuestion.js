@@ -8,7 +8,8 @@ const useDeleteQuestion = () => {
 
     const apiURL = 'http://localhost:3500/questions'
     const navigate = useNavigate()
-    const { card, bundleQuestions ,setBundleQuestions } = useContext(DataContext)
+    const { card, bundleQuestions ,setBundleQuestions, setCardQuestion, setCardAnswer } = useContext(DataContext)
+
     //might have to set another bundleId here since the other wil be deleted??
     const { id } = card
 
@@ -17,11 +18,14 @@ const useDeleteQuestion = () => {
         try{ 
             const response = await axios.delete(`${apiURL}/${id}`)
             setBundleQuestions(bundleQuestions.filter(question => question.id !== id))
+            setCardQuestion('')
+            setCardAnswer('')
             navigate(`/view/${card.bundleId}`)
         } catch(err) {
             console.log(`Error: ${err.message}`)
         }
     }
+
     return{deleteQuestion}
 }
 

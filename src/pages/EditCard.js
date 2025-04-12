@@ -18,6 +18,8 @@ const EditCard = () =>  {
     const { id } = useParams()
     console.log(card)
 
+    
+
 
     return (
         <main

@@ -13,7 +13,7 @@ const PracticeCards = () => {
     const { id } = useParams()
     const cardDataURL = "http://localhost:3500/questions" 
     const { cardData, isCardLoading, fetchCardError } = useFetchQuestions(cardDataURL)
-    let { count, setCount, questionLength, setQuestionLength } = useContext(DataContext)
+    let { count, questionLength, setQuestionLength } = useContext(DataContext)
 
     const questions = cardData.filter(question => question.bundleId === Number(id))
     if(questions) {setQuestionLength(questions.length)}

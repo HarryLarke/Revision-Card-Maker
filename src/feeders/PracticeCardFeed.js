@@ -4,12 +4,12 @@ import PracticeCard from "../components/PracticeCard"
 import FinishCard from "../components/FinishCard"
 
 
-
-
 const PracticeCardFeed = ({questions}) => {
 
-    let { count, questionLength } = useContext(DataContext)
-    const question = questions?.find(question => question.qNum === count) 
+    let { count} = useContext(DataContext)
+    const sortedQuestions = [...questions].sort((a, b) => a.createdAt - b.createdAt)
+    const questionLength = sortedQuestions.length
+    const question = sortedQuestions[count - 1]
     console.log(questionLength)
     console.log(count)
 
@@ -17,12 +17,12 @@ const PracticeCardFeed = ({questions}) => {
         <>
         {question && count <= questionLength && <PracticeCard
             key = {question.id}
-            number = {question.qNum}
+            number = {count}
             question = {question.question}
             answer = {question.answer}
             /> }
         {!question && count > questionLength && <FinishCard/>}
-        {!question && count === 1 && <p>No Cards to display...</p>}
+        {!question && count === 0 && <p>No Cards to display...</p>}
         </>
     )
 }

@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import { sub } from 'date-fns'
 import { useParams, useNavigate } from "react-router-dom"
 import { nanoid } from 'nanoid'
 import axios from "axios"
@@ -21,11 +22,11 @@ const useCreateCards = () => {
         e.preventDefault()
         console.log(bundleId)
         console.log(questionLength)
-
+        let min = 1
         const newQuestion = {
             bundleId: bundleId, 
             id: nanoid(), 
-            qNum, 
+            createdAt: sub(new Date(), { minutes: min++ }).toISOString(),
             question: cardQuestion,
             answer: cardAnswer
         } 
@@ -41,7 +42,7 @@ const useCreateCards = () => {
             console.log(`Error ${err.message}`)
         }  finally {
             console.log('Question posted!')
-            navigate(`/`)
+            navigate(`/view/${id}`)
         }
     } 
     return {saveCard}

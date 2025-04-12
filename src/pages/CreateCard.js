@@ -36,7 +36,7 @@ const CreateCard = () =>  {
             className="Practice-Card Make-Card">
             <h3 
             className="Practice-Title">
-                Question: {questionLength}</h3> 
+                Question: {questionLength + 1}</h3> 
             <p
             className="Practice-Question"
             >Please add a qusestion.</p>
