@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { useParams } from "react-router-dom"
 
 import useEditQuestion from "../hooks/useEditQuestion"
+import useDeleteQuestion from "../hooks/useDeleteQuestion"
 import Button from "../buttons/Button"
 import DataContext from "../context/DataContext"
 
@@ -12,6 +13,7 @@ const cardDataURL = "http://localhost:3500/questions"
 const EditCard = () =>  {
 
     const { editCard } = useEditQuestion()
+    const { deleteQuestion } = useDeleteQuestion()
     const { card, cardQuestion, setCardQuestion, cardAnswer, setCardAnswer } = useContext(DataContext)
     const { id } = useParams()
     console.log(card)
@@ -67,6 +69,13 @@ const EditCard = () =>  {
         <button 
             className="Button Button-Create"
             type="submit">Edit
+        </button>
+
+        <button
+        className="Button Delete"
+        onClick={deleteQuestion}
+        >
+            Delete 
         </button>
 
         <Button
