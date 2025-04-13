@@ -4,12 +4,14 @@ import { Link } from "react-router-dom"
 
 
 const Card = ({id, number, question, answer}) => {
-
-    const { showAnswers } = useContext(DataContext)
+    const { showAnswers, setQuestionNumber } = useContext(DataContext)
+    
     return (
         <Link
         className="Bundle Card"
         to={`/viewCard/${id}`}
+        onClick={() => {setQuestionNumber(number)
+        }}
         >
             <h3 
             className="Card-Title">

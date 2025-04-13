@@ -5,8 +5,6 @@ import DataContext from "../context/DataContext"
 const Bundle = ({bundle}) => {
 
     const { setShowAnswers, setSelectedBundleTitle } = useContext(DataContext)
-
-    const QNum = bundle.questions
     
 
     return (
@@ -25,7 +23,6 @@ const Bundle = ({bundle}) => {
         <p
         className="Bundle-Desciption-Title">Description:</p>
         <p>{bundle.description}</p>
-        <p>{QNum} Cards</p>
         </Link>
     )
 }

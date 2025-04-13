@@ -12,11 +12,10 @@ import { useContext } from "react"
 const ViewCard = () => {
     const { id } = useParams()
     const cardDataURL = "http://localhost:3500/questions" 
-    const { setCard, setCardQuestion, setCardAnswer }  = useContext(DataContext)
+    const { setCard, setCardQuestion, setCardAnswer, questionNumber }  = useContext(DataContext)
     const { cardData, isCardLoading, fetchCardError} = useFetchQuestions(cardDataURL)
-
+    console.log(questionNumber)
     const question = cardData.find(question => question.id === id)
-    console.log(question)
     let bundleId = "/"
     if(question) {
         bundleId = `/view/${question.bundleId}`
@@ -40,7 +39,7 @@ const ViewCard = () => {
 
         {!isCardLoading && !fetchCardError && question && <PracticeCard 
         key = {question.id}
-        number = {question.qNum}
+        number = {questionNumber}
         question = {question.question}
         answer = {question.answer}
         />}

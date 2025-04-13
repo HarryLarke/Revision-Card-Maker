@@ -3,6 +3,7 @@ import { useContext } from "react"
 import DataContext from "../context/DataContext"
 
 import Button from "../buttons/Button"
+import CogIcon from "../icons/CogIcon"
 import ButtonShowAns from "../buttons/ButtonShowAns"
 import CardFeed from "../feeders/CardFeed"
 import useFetchQuestions from "../hooks/useFetchQuestions"
@@ -34,6 +35,7 @@ const ViewCards = () => {
                 />
                 <ButtonShowAns
                 title={'Answers'}/>
+                <CogIcon/>
             </header>
 
         <main

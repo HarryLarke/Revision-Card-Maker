@@ -2,9 +2,9 @@ const Footer = () => {
 
     return (
         <footer
-        className="Footer">
+        className="Header Footer">
             <p>
-                Footer Element.
+                Harry Larke 2025
             </p>
         </footer>
     )

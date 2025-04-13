@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom"
 import Card from "../components/Card"
 import MakeCard from "../buttons/MakeCard"
 
-
 const CardFeed = ({bundleQuestions}) => {
 const { id } = useParams()
 
@@ -18,6 +17,7 @@ const questions = bundleQuestions.filter(question => question.bundleId === Numbe
                 number = {count += 1}
                 question={question.question}
                 answer={question.answer}
+
                 ></Card>)
         
     return( 

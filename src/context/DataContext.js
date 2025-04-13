@@ -23,7 +23,7 @@ export const DataProvider = ({children}) => {
     const [ cardQuestion, setCardQuestion ] = useState('') //maybe use this in component???
     const [ cardAnswer, setCardAnswer ] = useState('')
     const [ card, setCard ] = useState([]) //Only for editing the card - same below
-
+    const [ questionNumber, setQuestionNumber ] = useState(0)
     
     //For Practice Mode, ETC
     const [ showAnswers, setShowAnswers ] = useState(false) 
@@ -44,7 +44,7 @@ export const DataProvider = ({children}) => {
             bundles, setBundles, isCardLoading, fetchCardError, data, isLoading, fetchError, showAnswers, setShowAnswers, count, setCount,
             questionLength, setQuestionLength, bundleDescription, setBundleDescription, bundleTitle, setBundleTitle,
             cardQuestion, setCardQuestion, cardAnswer, setCardAnswer, bundleQuestions, setBundleQuestions, selectedBundleTitle, card, setCard,
-            setSelectedBundleTitle, renderCards, setRenderCards 
+            setSelectedBundleTitle, renderCards, setRenderCards, questionNumber, setQuestionNumber  
         }}
         >{children}</DataContext.Provider>
     )

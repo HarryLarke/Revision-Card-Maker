@@ -15,7 +15,8 @@ const PracticeCard = ({number, question, answer}) => {
 
     useKeyPress("Space", () => {setShowAnswers(!showAnswers)})
 
-
+    console.log(number)
+    
     return (
         <div
         className="Practice-Card">

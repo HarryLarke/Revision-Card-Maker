@@ -9,6 +9,7 @@ import EditCard from './pages/EditCard'
 import ViewCard from './pages/ViewCard';
 import Layout from './Layout'
 import CreateCard from './pages/CreateCard';
+import BundleSettings from './pages/BundleSettings';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
 
           <Route path='/view/:id'>
             <Route index element={<ViewCards/>}/>
+            <Route path='/view/:id/bundle-settings' element={<BundleSettings/>}/>
           </Route>
 
           <Route path='/practice/:id'>
@@ -37,6 +39,7 @@ function App() {
           <Route path='/viewCard/:id'>
             <Route index element={<ViewCard/>}/>
             <Route path='/viewCard/:id/edit' element={<EditCard/>}/>
+            
           </Route>
 
           <Route>
